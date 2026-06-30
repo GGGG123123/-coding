@@ -389,6 +389,9 @@ flowchart TD
 AI 的使用边界是：不能直接替代真实业务判断，不能未经审核生成最终测试结论，不能把未验证的接口字段当作真实项目事实。本方案中 AI 输出始终以"建议"形式呈现，最终结论由测试人员确认后才能沉淀为回归用例或缺陷。
 
 ### 12.5 AI 分析结果示例
+<img width="2560" height="1280" alt="image-20260630214853517" src="https://github.com/user-attachments/assets/018f63b1-feff-487a-86bc-e4bcc2415c29" />
+<img width="2560" height="1280" alt="image-20260630214903809" src="https://github.com/user-attachments/assets/01613870-2a69-4f0b-adc2-1c0f537bf982" />
+
 
 执行 `python -m ai_assistant.analyze_results` 后，调用 DashScope `qwen3.7-plus` 生成的分析报告示例如下（完整结果见 `reports/ai-analysis-report.md`）：
 
