@@ -1,0 +1,7 @@
+# Optional local AI configuration. The preferred style is .env with MODEL_API_KEY,
+# MODEL_API_BASE, and MODEL_NAME, matching the SuperBizAgent project.
+provider: openai_compatible
+base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+path: "/chat/completions"
+model: "qwen3.7-plus"
+api_key: ""

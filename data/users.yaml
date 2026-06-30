@@ -1,0 +1,26 @@
+roles:
+  admin:
+    description: "系统管理员，拥有所有后台能力"
+    expected_permissions:
+      - device:read
+      - device:write
+      - ota:read
+      - ota:write
+      - log:read
+  operator:
+    description: "运营/运维人员，可查看设备、查询日志、创建 OTA"
+    expected_permissions:
+      - device:read
+      - ota:read
+      - ota:write
+      - log:read
+  viewer:
+    description: "只读人员，只能查看授权范围内的数据"
+    expected_permissions:
+      - device:read
+      - ota:read
+      - log:read
+  guest:
+    description: "低权限用户，不能访问核心管理接口"
+    expected_permissions: []
+

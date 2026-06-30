@@ -1,0 +1,2 @@
+"""Playwright UI smoke cases."""
+

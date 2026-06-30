@@ -1,0 +1,38 @@
+online_device:
+  device_id: "TEST_DEVICE_001"
+  expected_status: "online"
+  current_version: "1.0.0"
+  org_id: "ORG_A"
+
+secondary_online_device:
+  device_id: "TEST_DEVICE_002"
+  expected_status: "online"
+  current_version: "1.0.0"
+  org_id: "ORG_A"
+
+offline_device:
+  device_id: "TEST_DEVICE_OFFLINE"
+  expected_status: "offline"
+  current_version: "1.0.0"
+  org_id: "ORG_A"
+
+foreign_org_device:
+  device_id: "TEST_DEVICE_FOREIGN"
+  expected_status: "online"
+  current_version: "1.0.0"
+  org_id: "ORG_B"
+
+pagination_cases:
+  - page: 1
+    size: 10
+    expected_code: 0
+  - page: 0
+    size: 10
+    expected_code: 400
+  - page: 1
+    size: 0
+    expected_code: 400
+  - page: 1
+    size: 1000
+    expected_code: 400
+

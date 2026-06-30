@@ -1,0 +1,42 @@
+env_name: dev
+base_url: "https://dev-admin-api.example.com"
+admin_url: "https://dev-admin.example.com"
+api_timeout: 5
+ui_timeout: 10000
+verify_ssl: true
+
+auto_start_mock_backend: false
+auto_start_mock_device: false
+
+mock_device:
+  base_url: "http://127.0.0.1:8001"
+  callback_token: "mock-device-secret"
+
+mysql:
+  enabled: false
+  host: "127.0.0.1"
+  port: 3306
+  user: "iot_dev"
+  password: "replace_me"
+  database: "iot_admin_dev"
+
+accounts:
+  admin:
+    username: "admin_dev"
+    password: "replace_me"
+  operator:
+    username: "operator_dev"
+    password: "replace_me"
+  viewer:
+    username: "viewer_dev"
+    password: "replace_me"
+  guest:
+    username: "guest_dev"
+    password: "replace_me"
+
+safety:
+  allow_write: true
+  allow_destructive: false
+  forbidden_write_envs:
+    - prod
+

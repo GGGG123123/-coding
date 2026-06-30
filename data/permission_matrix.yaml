@@ -1,0 +1,52 @@
+create_ota_task:
+  method: "POST"
+  path: "/api/ota/tasks"
+  body:
+    device_ids:
+      - "TEST_DEVICE_001"
+    firmware_id: "FW_2001"
+    target_version: "2.0.1"
+  roles:
+    admin: 0
+    operator: 0
+    viewer: 403
+    guest: 403
+
+query_devices:
+  method: "GET"
+  path: "/api/devices"
+  params:
+    page: 1
+    size: 10
+  roles:
+    admin: 0
+    operator: 0
+    viewer: 0
+    guest: 403
+
+query_logs:
+  method: "GET"
+  path: "/api/logs"
+  params:
+    page: 1
+    size: 10
+  roles:
+    admin: 0
+    operator: 0
+    viewer: 0
+    guest: 403
+
+cancel_ota_task:
+  method: "POST"
+  path: "/api/ota/tasks/{task_id}/cancel"
+  prepare:
+    type: "ota_task"
+    device_id: "TEST_DEVICE_001"
+    firmware_id: "FW_2001"
+    target_version: "2.0.1"
+  roles:
+    admin: 0
+    operator: 0
+    viewer: 403
+    guest: 403
+

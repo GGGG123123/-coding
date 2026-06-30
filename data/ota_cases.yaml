@@ -1,0 +1,39 @@
+normal_ota:
+  device_id: "TEST_DEVICE_001"
+  firmware_id: "FW_2001"
+  current_version: "1.0.0"
+  target_version: "2.0.1"
+  expected_code: 0
+
+batch_ota:
+  device_ids:
+    - "TEST_DEVICE_001"
+    - "TEST_DEVICE_002"
+  firmware_id: "FW_2001"
+  target_version: "2.0.1"
+  expected_code: 0
+
+offline_device:
+  device_id: "TEST_DEVICE_OFFLINE"
+  firmware_id: "FW_2001"
+  target_version: "2.0.1"
+  expected_code: 400
+
+same_version:
+  device_id: "TEST_DEVICE_001"
+  firmware_id: "FW_1001"
+  target_version: "1.0.0"
+  expected_code: 400
+
+downgrade:
+  device_id: "TEST_DEVICE_001"
+  firmware_id: "FW_0900"
+  target_version: "0.9.0"
+  expected_code: 400
+
+missing_firmware:
+  device_id: "TEST_DEVICE_001"
+  firmware_id: "FW_NOT_EXIST"
+  target_version: "9.9.9"
+  expected_code: 400
+

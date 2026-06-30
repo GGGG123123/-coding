@@ -1,0 +1,57 @@
+env_name: test
+base_url: "http://127.0.0.1:9000"
+admin_url: "http://127.0.0.1:9000/admin"
+api_timeout: 5
+ui_timeout: 10000
+verify_ssl: true
+
+auto_start_mock_backend: true
+auto_start_mock_device: true
+
+mock_backend:
+  host: "127.0.0.1"
+  port: 9000
+  health_path: "/health"
+
+mock_device:
+  host: "127.0.0.1"
+  port: 8001
+  base_url: "http://127.0.0.1:8001"
+  callback_token: "mock-device-secret"
+
+mysql:
+  enabled: false
+  host: "127.0.0.1"
+  port: 3306
+  user: "iot_test"
+  password: "iot_test_password"
+  database: "iot_admin_test"
+
+accounts:
+  admin:
+    username: "admin_test"
+    password: "123456"
+  operator:
+    username: "operator_test"
+    password: "123456"
+  viewer:
+    username: "viewer_test"
+    password: "123456"
+  guest:
+    username: "guest_test"
+    password: "123456"
+
+safety:
+  allow_write: true
+  allow_destructive: false
+  forbidden_write_envs:
+    - prod
+
+ui_selectors:
+  username: "input[name='username']"
+  password: "input[name='password']"
+  submit: "button[type='submit']"
+  device_menu_text: "设备管理"
+  ota_menu_text: "OTA管理"
+  log_menu_text: "日志管理"
+
